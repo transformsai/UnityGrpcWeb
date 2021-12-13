@@ -1,0 +1,20 @@
+{
+  "name": "ai.transforms.unity-grpc-web",
+  "version": "0.1.0",
+  "displayName": "Grpc-Web for Unity",
+  "description": "Allows using https://github.com/grpc/grpc-dotnet/ with Unity WebGL",
+  "unity": "2020.3",
+  "unityRelease": "15f2",
+  "documentationUrl": "https://github.com/transitional-forms-inc/UnityGrpcWeb",
+  "dependencies": {},
+  "keywords": [
+    "grpc-web",
+    "grpc",
+    "protobuf"
+  ],
+  "author": {
+    "name": "Transitional Forms Inc",
+    "email": "developers@transforms.ai",
+    "url": "http://transforms.ai"
+  }
+}

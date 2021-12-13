@@ -1,0 +1,16 @@
+{
+    "name": "UnityGrpcWeb",
+    "rootNamespace": "TransformsAI.UnityGrpcWeb",
+    "references": [
+        "GUID:9b55c7093f1ed8c4f828c6f6adadfd3f"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
