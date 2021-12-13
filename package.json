@@ -5,8 +5,12 @@
   "description": "Allows using https://github.com/grpc/grpc-dotnet/ with Unity WebGL",
   "unity": "2020.3",
   "unityRelease": "15f2",
-  "documentationUrl": "https://github.com/transitional-forms-inc/UnityGrpcWeb",
-  "dependencies": {},
+  "documentationUrl": "https://github.com/transformsai/UnityGrpcWeb",
+  "dependencies": {
+    "ai.transforms.js-interop": "0.2.0",
+    "ai.transforms.webgl-http-handler": "0.2.0",
+    "ai.transforms.webgl-threading-fix": "0.2.0"
+  },
   "keywords": [
     "grpc-web",
     "grpc",
