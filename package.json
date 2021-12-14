@@ -1,6 +1,6 @@
 {
   "name": "ai.transforms.unity-grpc-web",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "displayName": "Grpc-Web for Unity",
   "description": "Allows using https://github.com/grpc/grpc-dotnet/ with Unity WebGL",
   "unity": "2020.3",
