@@ -5,7 +5,7 @@ using UnityEngine;
 using ILogger = Microsoft.Extensions.Logging.ILogger;
 
 
-namespace TransformsAI.UnityGrpcWeb
+namespace TransformsAI.Unity.Grpc.Web
 {
     class UnityLoggerFactory : ILoggerFactory
     {
@@ -24,7 +24,7 @@ namespace TransformsAI.UnityGrpcWeb
         private class UnityLogger : ILogger
         {
             private readonly string _categoryName;
-            private List<object> scopeObjects = new List<object>();
+            private readonly List<object> _scopeObjects = new List<object>();
 
             public UnityLogger(string categoryName)
             {
@@ -33,7 +33,7 @@ namespace TransformsAI.UnityGrpcWeb
 
             public void Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception exception, Func<TState, Exception, string> formatter)
             {
-                if (formatter == null) formatter = (s, e) => $"{eventId} {s} : {e}";
+                formatter ??= (s, e) => $"{eventId} {s} : {e}";
 
                 switch (logLevel)
                 {
@@ -71,13 +71,13 @@ namespace TransformsAI.UnityGrpcWeb
                 {
                     _unityLogger = unityLogger;
                     _state = state;
-                    _unityLogger.scopeObjects.Add(state);
+                    _unityLogger._scopeObjects.Add(state);
                 }
 
                 public void Dispose()
                 {
                     var state = _state;
-                    var objects = _unityLogger.scopeObjects;
+                    var objects = _unityLogger._scopeObjects;
                     var index = objects.FindLastIndex(it => it.Equals(state));
                     if (index >= 0) objects.RemoveAt(index);
 

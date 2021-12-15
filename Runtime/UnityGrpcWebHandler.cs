@@ -2,9 +2,10 @@ using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 using Grpc.Net.Client.Web;
+using TransformsAI.Unity.WebGL;
 using UnityEngine;
 
-namespace TransformsAI.UnityGrpcWeb
+namespace TransformsAI.Unity.Grpc.Web
 {
     public static class UnityGrpcWebHandler
     {

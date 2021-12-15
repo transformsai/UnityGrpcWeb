@@ -1,6 +1,6 @@
 {
     "name": "UnityGrpcWeb",
-    "rootNamespace": "TransformsAI.UnityGrpcWeb",
+    "rootNamespace": "TransformsAI.Unity.Grpc.Web",
     "references": [
         "GUID:9b55c7093f1ed8c4f828c6f6adadfd3f"
     ],

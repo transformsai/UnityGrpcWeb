@@ -2,7 +2,7 @@ using System;
 using Grpc.Net.Client;
 using Grpc.Net.Client.Web;
 
-namespace TransformsAI.UnityGrpcWeb
+namespace TransformsAI.Unity.Grpc.Web
 {
     public static class UnityGrpcWeb
     {
