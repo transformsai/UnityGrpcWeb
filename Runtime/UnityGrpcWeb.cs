@@ -10,15 +10,15 @@ namespace TransformsAI.Unity.Grpc.Web
             string address,
             GrpcWebMode mode = GrpcWebMode.GrpcWebText,
             GrpcChannelOptions options = null,
-            bool shutdownOnExitPlayMode = true,
+            bool disposeOnExitPlayMode = true,
             bool useLogger = false) =>
-            MakeChannel(new Uri(address), mode, options, shutdownOnExitPlayMode, useLogger);
+            MakeChannel(new Uri(address), mode, options, disposeOnExitPlayMode, useLogger);
 
         public static GrpcChannel MakeChannel(
             Uri address,
             GrpcWebMode mode = GrpcWebMode.GrpcWebText,
             GrpcChannelOptions options = null,
-            bool shutdownOnExitPlayMode = true,
+            bool disposeOnExitPlayMode = true,
             bool useLogger = false)
         {
             options ??= new GrpcChannelOptions();
@@ -26,14 +26,14 @@ namespace TransformsAI.Unity.Grpc.Web
             if (options.HttpHandler == null && options.HttpClient == null) options.HttpHandler = UnityGrpcWebHandler.Create(mode);
             if (useLogger && options.LoggerFactory == null) options.LoggerFactory = new UnityLoggerFactory();
 
-#if UNITY_EDITOR
             var channel = GrpcChannel.ForAddress(address, options);
-
-            if (shutdownOnExitPlayMode)
+#if UNITY_EDITOR
+            
+            if (disposeOnExitPlayMode)
             {
                 UnityEditor.EditorApplication.playModeStateChanged += change =>
                 {
-                    if (change == UnityEditor.PlayModeStateChange.ExitingPlayMode) channel.ShutdownAsync();
+                    if (change == UnityEditor.PlayModeStateChange.ExitingPlayMode) channel.Dispose();
                 };
             }
 #endif
