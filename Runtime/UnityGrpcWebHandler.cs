@@ -2,7 +2,6 @@ using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 using Grpc.Net.Client.Web;
-using TransformsAI.Unity.WebGL;
 using UnityEngine;
 
 namespace TransformsAI.Unity.Grpc.Web
@@ -17,7 +16,7 @@ namespace TransformsAI.Unity.Grpc.Web
             {
                 var innerHandler = new UnityWebGlHttpHandler();
                 var fixedHandler = new HandlerFix(mode, innerHandler);
-                return new GrpcWebHandler(mode, fixedHandler);
+                return new TransformsAI.Unity.WebGL.GrpcWebHandler(mode, fixedHandler);
             }
 #endif
             var fixedStandaloneHandler = new HandlerFix(mode, new HttpClientHandler());
@@ -39,9 +38,5 @@ namespace TransformsAI.Unity.Grpc.Web
                 return base.SendAsync(request, cancellationToken);
             }
         }
-    
-    
-
-    }
-    
+    }    
 }
