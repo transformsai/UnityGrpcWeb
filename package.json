@@ -1,6 +1,6 @@
 {
   "name": "ai.transforms.unity-grpc-web",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "displayName": "Grpc-Web for Unity",
   "description": "Allows using https://github.com/grpc/grpc-dotnet/ with Unity WebGL",
   "unity": "2020.3",
@@ -8,8 +8,11 @@
   "documentationUrl": "https://github.com/transformsai/UnityGrpcWeb",
   "dependencies": {
     "ai.transforms.js-interop": "0.3.0",
-    "ai.transforms.webgl-http-handler": "0.3.0",
-    "ai.transforms.webgl-threading-fix": "0.3.0"
+    "ai.transforms.webgl-http-handler": "0.3.1",
+    "ai.transforms.webgl-threading-fix": "0.3.0",
+    "org.nuget.grpc.core.api": "2.42.0",
+    "org.nuget.grpc.net.client": "2.41.0",
+    "org.nuget.grpc.net.client.web": "2.41.0"
   },
   "keywords": [
     "grpc-web",
