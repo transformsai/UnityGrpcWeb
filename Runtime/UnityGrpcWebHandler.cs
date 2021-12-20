@@ -14,9 +14,9 @@ namespace TransformsAI.Unity.Grpc.Web
 #if UNITY_WEBGL
             if (!Application.isEditor)
             {
-                var innerHandler = new UnityWebGlHttpHandler();
+                var innerHandler = new TransformsAI.Unity.WebGL.UnityWebGlHttpHandler();
                 var fixedHandler = new HandlerFix(mode, innerHandler);
-                return new TransformsAI.Unity.WebGL.GrpcWebHandler(mode, fixedHandler);
+                return new GrpcWebHandler(mode, fixedHandler);
             }
 #endif
             var fixedStandaloneHandler = new HandlerFix(mode, new HttpClientHandler());
