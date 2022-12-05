@@ -7,7 +7,6 @@
   "unityRelease": "13f1",
   "documentationUrl": "https://github.com/transformsai/UnityGrpcWeb",
   "dependencies": {
-    "ai.transforms.js-interop": "0.4.1",
     "ai.transforms.webgl-http-handler": "0.3.3",
     "org.nuget.grpc.core.api": "2.42.0",
     "org.nuget.grpc.net.client": "2.41.0",
